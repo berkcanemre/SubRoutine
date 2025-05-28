@@ -1,0 +1,17 @@
+--- Your Order Details ---
+Sandwiches:
+  1. 4" white Sandwich (Toasted) with:
+      Meats: steak
+      Cheeses: swiss
+      Other Toppings: pickles
+      Sauces: mayo
+      Price: $7.25
+
+Drinks:
+  1. small coke Drink - $0.00
+
+Chips:
+  1. bbq Chips - $1.50
+
+Total Cost: $8.75
+--------------------------

@@ -1,21 +1,33 @@
-package com.pluralsight; // Package declaration
+package com.pluralsight;
+// The Chips class represents a bag of chips, implementing the MenuItem interface.
+public class Chips implements MenuItem {
+    private String type; // Stores the type or flavor of chips (e.g., "Regular", "Salt & Vinegar").
 
-// Chips class to represent a chip order
-public class Chips {
-    private String type; // Type of chips
-
-    // Constructor to initialize chip type
+    // Constructor to initialize a new Chips object.
     public Chips(String type) {
-        this.type = type; // Set chip type
+        this.type = type;
     }
 
-    // Return the fixed price of chips
+    // --- Getter ---
+    public String getType() {
+        return type;
+    }
+
+    // Overrides the getName method from MenuItem to provide a descriptive name for the chips.
+    @Override
+    public String getName() {
+        return type + " Chips";
+    }
+
+    // Overrides the getPrice method from MenuItem. Chips have a fixed price.
+    @Override
     public double getPrice() {
-        return 1.50;
+        return 1.50; // Fixed price for chips as per project requirements.
     }
 
-    // Return a string representation of the chip
-    public String getDescription() {
-        return type + " chips - $1.50";
+    // Overrides the toString method to provide a concise string representation of the chips.
+    @Override
+    public String toString() {
+        return String.format("%s Chips - $%.2f", type, getPrice());
     }
 }

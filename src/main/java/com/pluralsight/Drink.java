@@ -1,28 +1,49 @@
-package com.pluralsight; // Package declaration
+package com.pluralsight;
+// The Drink class represents a beverage, implementing the MenuItem interface.
+public class Drink implements MenuItem {
+    private String flavor; // Stores the flavor of the drink (e.g., "Coke", "Sprite").
+    private String size;   // Stores the size of the drink (e.g., "Small", "Medium", "Large").
 
-// Drink class to store drink info
-public class Drink {
-    private String flavor;    // Flavor of the drink
-    private String size;      // Size: small, medium, large
-
-    // Constructor to initialize drink
+    // Constructor to initialize a new Drink object.
     public Drink(String flavor, String size) {
-        this.flavor = flavor; // Set flavor
-        this.size = size;     // Set size
+        this.flavor = flavor;
+        this.size = size;
     }
 
-    // Get price based on size
+    // --- Getters ---
+    public String getFlavor() {
+        return flavor;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    // Overrides the getName method from MenuItem to provide a descriptive name for the drink.
+    @Override
+    public String getName() {
+        return size + " " + flavor + " Drink";
+    }
+
+    // Overrides the getPrice method from MenuItem to calculate the price based on size.
+    @Override
     public double getPrice() {
-        return switch (size.toLowerCase()) {
-            case "small" -> 2.00;
-            case "medium" -> 2.50;
-            case "large" -> 3.00;
-            default -> 0.0;
-        };
+        switch (size) {
+            case "Small":
+                return 2.00; // Price for a small drink.
+            case "Medium":
+                return 2.50; // Price for a medium drink.
+            case "Large":
+                return 3.00; // Price for a large drink.
+            default:
+                // Default to 0.0 for unknown sizes, though input validation should prevent this.
+                return 0.0;
+        }
     }
 
-    // Return a string representation of the drink
-    public String getDescription() {
-        return size + " " + flavor + " drink - $" + String.format("%.2f", getPrice());
+    // Overrides the toString method to provide a concise string representation of the drink.
+    @Override
+    public String toString() {
+        return String.format("%s %s Drink - $%.2f", size, flavor, getPrice());
     }
 }
