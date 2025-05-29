@@ -1,0 +1,19 @@
+--- Your Order Details ---
+Sandwiches:
+  1. 4" white Sandwich (Toasted) with:
+      Meats: steak, chicken
+      Extra Meats: 1 portions
+      Cheeses: american
+      Other Toppings: peppers, mushrooms
+      Sauces: ketchup
+      Sides: au jus sauce
+      Price: $8.75
+
+Drinks:
+  1. Large Coke Drink - $3.00
+
+Chips:
+  1. BBQ Chips - $1.50
+
+Total Cost: $13.25
+--------------------------

@@ -1,0 +1,13 @@
+~~~~~~~~~~~~~~~~~~~~~~~~ Your Order Details ~~~~~~~~~~~~~~~~~~~~~~
+Sandwiches:
+  1. 4" white Sandwich (Not Toasted)
+      Price: $5.50
+  2. 8" white Sandwich (Toasted) with:
+      Meats: bacon
+      Cheeses: cheddar
+      Other Toppings: lettuce, tomato
+      Sauces: ranch
+      Price: $10.50
+
+Total Cost: $16.00
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

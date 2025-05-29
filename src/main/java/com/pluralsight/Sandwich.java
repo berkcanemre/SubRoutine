@@ -1,6 +1,7 @@
 package com.pluralsight;
-import java.util.ArrayList; // Used for dynamic lists of toppings.
-import java.util.List;      // Interface for list collections.
+
+import java.util.ArrayList;
+import java.util.List;
 
 // The Sandwich class represents a customizable sandwich, implementing the MenuItem interface.
 public class Sandwich implements MenuItem {
@@ -15,6 +16,10 @@ public class Sandwich implements MenuItem {
     private List<String> sauces;        // Sauces: mayo, mustard, ketchup, etc.
     private List<String> sides;         // Sides that can be added to a sandwich (e.g., "au jus sauce").
 
+    // Fields to track explicit "extra" portions of meat and cheese.
+    private int numExtraMeats;
+    private int numExtraCheeses;
+
     // Constructor to initialize a new Sandwich object with bread and size.
     public Sandwich(String bread, String size) {
         this.bread = bread;
@@ -26,6 +31,8 @@ public class Sandwich implements MenuItem {
         this.regularToppings = new ArrayList<>();
         this.sauces = new ArrayList<>();
         this.sides = new ArrayList<>();
+        this.numExtraMeats = 0;   // Initialize extra meats count.
+        this.numExtraCheeses = 0; // Initialize extra cheeses count.
     }
 
     // --- Getters for all properties ---
@@ -61,10 +68,26 @@ public class Sandwich implements MenuItem {
         return sides;
     }
 
+    public int getNumExtraMeats() {
+        return numExtraMeats;
+    }
+
+    public int getNumExtraCheeses() {
+        return numExtraCheeses;
+    }
+
     // --- Setters ---
     // Sets whether the sandwich should be toasted.
     public void setToasted(boolean toasted) {
         this.toasted = toasted;
+    }
+
+    public void setNumExtraMeats(int numExtraMeats) {
+        this.numExtraMeats = numExtraMeats;
+    }
+
+    public void setNumExtraCheeses(int numExtraCheeses) {
+        this.numExtraCheeses = numExtraCheeses;
     }
 
     // --- Methods to add toppings ---
@@ -91,6 +114,32 @@ public class Sandwich implements MenuItem {
     // Adds a side (like au jus) to the sandwich.
     public void addSide(String side) {
         this.sides.add(side);
+    }
+
+    // --- Methods to remove toppings ---
+    // Removes the first occurrence of a specified meat topping.
+    public boolean removeMeat(String meat) {
+        return this.meats.remove(meat);
+    }
+
+    // Removes the first occurrence of a specified cheese topping.
+    public boolean removeCheese(String cheese) {
+        return this.cheeses.remove(cheese);
+    }
+
+    // Removes the first occurrence of a specified regular topping.
+    public boolean removeRegularTopping(String topping) {
+        return this.regularToppings.remove(topping);
+    }
+
+    // Removes the first occurrence of a specified sauce.
+    public boolean removeSauce(String sauce) {
+        return this.sauces.remove(sauce);
+    }
+
+    // Removes the first occurrence of a specified side.
+    public boolean removeSide(String side) {
+        return this.sides.remove(side);
     }
 
     // Overrides the getName method from MenuItem to provide a descriptive name for the sandwich.
@@ -139,6 +188,28 @@ public class Sandwich implements MenuItem {
             }
         }
 
+        // Add price for explicit "extra" meat portions.
+        if (numExtraMeats > 0) {
+            double extraMeatPrice = 0.0;
+            switch (size) {
+                case "4\"": extraMeatPrice = 0.50; break;
+                case "8\"": extraMeatPrice = 1.00; break;
+                case "12\"": extraMeatPrice = 1.50; break;
+            }
+            price += numExtraMeats * extraMeatPrice;
+        }
+
+        // Add price for explicit "extra" cheese portions.
+        if (numExtraCheeses > 0) {
+            double extraCheesePrice = 0.0;
+            switch (size) {
+                case "4\"": extraCheesePrice = 0.30; break;
+                case "8\"": extraCheesePrice = 0.60; break;
+                case "12\"": extraCheesePrice = 0.90; break;
+            }
+            price += numExtraCheeses * extraCheesePrice;
+        }
+
         // Regular toppings, sauces, and sides (like au jus) are included and do not add to the cost.
         return price;
     }
@@ -151,7 +222,7 @@ public class Sandwich implements MenuItem {
         details.append(String.format("%s %s Sandwich (%s)", size, bread, toasted ? "Toasted" : "Not Toasted"));
 
         // Check if any toppings are present before adding " with:".
-        if (!meats.isEmpty() || !cheeses.isEmpty() || !regularToppings.isEmpty() || !sauces.isEmpty() || !sides.isEmpty()) {
+        if (!meats.isEmpty() || !cheeses.isEmpty() || !regularToppings.isEmpty() || !sauces.isEmpty() || !sides.isEmpty() || numExtraMeats > 0 || numExtraCheeses > 0) {
             details.append(" with:");
         }
         details.append("\n"); // New line for better formatting.
@@ -160,8 +231,14 @@ public class Sandwich implements MenuItem {
         if (!meats.isEmpty()) {
             details.append("    Meats: " + String.join(", ", meats) + "\n");
         }
+        if (numExtraMeats > 0) {
+            details.append("    Extra Meats: " + numExtraMeats + " portions\n");
+        }
         if (!cheeses.isEmpty()) {
             details.append("    Cheeses: " + String.join(", ", cheeses) + "\n");
+        }
+        if (numExtraCheeses > 0) {
+            details.append("    Extra Cheeses: " + numExtraCheeses + " portions\n");
         }
         if (!regularToppings.isEmpty()) {
             details.append("    Other Toppings: " + String.join(", ", regularToppings) + "\n");

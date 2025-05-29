@@ -1,0 +1,20 @@
+--- Your Order Details ---
+Sandwiches:
+  1. 8" wrap Sandwich (Toasted) with:
+      Meats: steak, salami
+      Extra Meats: 2 portions
+      Cheeses: american, provolone, cheddar, swiss
+      Extra Cheeses: 1 portions
+      Other Toppings: lettuce, onions, tomatoes, cucumbers, pickles
+      Sauces: mayo, ranch, ketchup
+      Price: $19.60
+
+Drinks:
+  1. Large Sprite Drink - $3.00
+
+Chips:
+  1. BBQ Chips - $1.50
+  2. Ruffles Chips - $1.50
+
+Total Cost: $25.60
+--------------------------

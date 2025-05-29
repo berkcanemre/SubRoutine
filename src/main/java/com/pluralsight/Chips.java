@@ -1,4 +1,5 @@
 package com.pluralsight;
+
 // The Chips class represents a bag of chips, implementing the MenuItem interface.
 public class Chips implements MenuItem {
     private String type; // Stores the type or flavor of chips (e.g., "Regular", "Salt & Vinegar").

@@ -1,4 +1,5 @@
 package com.pluralsight;
+
 // The Drink class represents a beverage, implementing the MenuItem interface.
 public class Drink implements MenuItem {
     private String flavor; // Stores the flavor of the drink (e.g., "Coke", "Sprite").

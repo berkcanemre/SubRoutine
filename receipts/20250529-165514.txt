@@ -1,0 +1,11 @@
+--- Your Order Details ---
+Sandwiches:
+  1. 8" white Sandwich (Toasted) with:
+      Meats: steak
+      Cheeses: american
+      Other Toppings: peppers
+      Sauces: mayo
+      Price: $10.50
+
+Total Cost: $10.50
+--------------------------

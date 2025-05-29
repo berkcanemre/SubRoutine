@@ -1,6 +1,7 @@
 package com.pluralsight;
-import java.util.ArrayList; // Used for dynamic lists of menu items.
-import java.util.List;      // Interface for list collections.
+
+import java.util.ArrayList;
+import java.util.List;
 
 // The Order class manages a collection of sandwiches, drinks, and chips for a single customer order.
 public class Order {
@@ -43,6 +44,31 @@ public class Order {
         return chips;
     }
 
+    // --- Methods to remove items ---
+
+    //Removes a sandwich from the order by its index.
+    public Sandwich removeSandwich(int index) {
+        if (index >= 0 && index < sandwiches.size()) {
+            return sandwiches.remove(index);
+        }
+        return null; // Index out of bounds.
+    }
+    //Removes adrink from the order by its index.
+    public Drink removeDrink(int index) {
+        if (index >= 0 && index < drinks.size()) {
+            return drinks.remove(index);
+        }
+        return null; // Index out of bounds.
+    }
+
+    //Removes chips from the order by its index.
+    public Chips removeChips(int index) {
+        if (index >= 0 && index < chips.size()) {
+            return chips.remove(index);
+        }
+        return null; // Index out of bounds.
+    }
+
     // Calculates the total price of all items in the order.
     public double calculateTotalPrice() {
         double total = 0.0;
@@ -72,7 +98,7 @@ public class Order {
     @Override
     public String toString() {
         StringBuilder orderSummary = new StringBuilder();
-        orderSummary.append("--- Your Order Details ---\n");
+        orderSummary.append("~~~~~~~~~~~~~~~~~~~~~~~~ Your Order Details ~~~~~~~~~~~~~~~~~~~~~~\n");
 
         // Check if the order is empty and return appropriate message.
         if (sandwiches.isEmpty() && drinks.isEmpty() && chips.isEmpty()) {
@@ -107,7 +133,7 @@ public class Order {
 
         // Append the total calculated cost of the order.
         orderSummary.append(String.format("\nTotal Cost: $%.2f\n", calculateTotalPrice()));
-        orderSummary.append("--------------------------\n");
+        orderSummary.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         return orderSummary.toString();
     }
 }
