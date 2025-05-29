@@ -49,7 +49,7 @@ Receipt : ![](src/main/resources/Screensots/img_4.png)
 
 <p align="center"> <pre> Class Diagram  </pre>
 
-Class Diagram:
+Class Diagram: ![](src/main/resources/Screensots/img_5.png)
 
 <p align="center"> <pre> Interesting Code Snippet  </pre>
 
