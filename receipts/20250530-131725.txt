@@ -1,0 +1,14 @@
+~~~~~~~~~~~~~~~~~~~~~~~~ Your Order Details ~~~~~~~~~~~~~~~~~~~~~~
+Sandwiches:
+  1. 4" white Sandwich (Toasted) with:
+      Meats: chicken
+      Extra Meats: 2 portions
+      Cheeses: cheddar
+      Sauces: ranch
+      Price: $8.25
+
+Drinks:
+  1. Small Coke Drink - $2.00
+
+Total Cost: $10.25
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

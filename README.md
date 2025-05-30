@@ -84,7 +84,7 @@ IDE (IntelliJ IDEA, VS Code, Eclipse) or just a terminal
 Installation & Run
 
 Clone the repository:
-git clone https://github.com/berkcanemre/PennyPilot.git
+git clone https://github.com/berkcanemre/SubRoutine.git
 
 Open the project in your IDE.
 
