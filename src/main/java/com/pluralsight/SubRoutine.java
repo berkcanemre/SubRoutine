@@ -579,11 +579,17 @@ public class SubRoutine {
         // Get current date and time to name the receipt file.
         LocalDateTime now = LocalDateTime.now();
         // Define the desired date-time format for the file name (HH for 24-hour format).
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+        DateTimeFormatter filenameFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+        // Define the format for displaying date and time within the receipt content.
+        DateTimeFormatter contentFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
         // Construct the full file path.
-        String fileName = folderPath + "/" + now.format(formatter) + ".txt";
+        String fileName = folderPath + "/" + now.format(filenameFormatter) + ".txt";
 
         try (FileWriter writer = new FileWriter(fileName)) { // Use try-with-resources for automatic closing.
+            // Add date and time to the top of the receipt content.
+            writer.write("~~~~~~~~~~~~~~~~~~ SubRoutine Receipt ~~~~~~~~~~~~~~~~~~~~~~~~\n");
+            writer.write("Date and Time: " + now.format(contentFormatter) + "\n");
             writer.write(order.toString()); // Write the order summary to the file.
             System.out.println("Receipt saved to: " + fileName);
         } catch (IOException e) {
