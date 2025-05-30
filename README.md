@@ -36,20 +36,32 @@ Checkout: Displays the complete order details and the total cost. Prompts for co
 Receipt Generation: Upon order confirmation, a detailed receipt file is generated and saved in a receipts folder.
 
 Robust Input Handling: All menu selections are number-based,  ensuring a smoother user experience.
+
+
 <p align="center"> <pre> Screenshots  </pre>
 
-Home Screen: ![](src/main/resources/Screensots/img_1.png)
+Home Screen:
 
-Order Menu:![](src/main/resources/Screensots/img_2.png)
+![](src/main/resources/Screensots/img_1.png)
 
-Order Signature Sandwich:![](src/main/resources/Screensots/img_3.png)
+Order Menu:
 
-Receipt : ![](src/main/resources/Screensots/img_4.png)
+![](src/main/resources/Screensots/img_2.png)
+
+Order Signature Sandwich:
+
+![](src/main/resources/Screensots/img_3.png)
+
+Receipt:
+
+![](src/main/resources/Screensots/img_4.png)
 
 
 <p align="center"> <pre> Class Diagram  </pre>
 
-Class Diagram: ![](src/main/resources/Screensots/img_5.png)
+Class Diagram:
+
+![](src/main/resources/Screensots/img_5.png)
 
 <p align="center"> <pre> Interesting Code Snippet  </pre>
 
